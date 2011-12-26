@@ -67,4 +67,22 @@ g,8[ d g]																											%22
 \change Staff="rightHand"
 <d' fis' a'>4 <a cis' e'>4.																		%22
 \bar "||"
-<a d' fis'>1																									%23
+\repeat unfold 2
+{
+<<
+{ \voiceOne
+	fis'2. fis'4																								%23
+	e'2. e'4																										%24
+	d'2. a4																											%25
+}
+\new Voice
+{
+	\voiceTwo
+	<a d'>1																											%23
+	<a cis'>																										%24
+	<g b>																												%25
+}
+>>
+<fis a d'>2 <e a cis'>																				%26
+}
+\bar "||"

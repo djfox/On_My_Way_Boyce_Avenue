@@ -28,5 +28,10 @@ a,8 e a2.																											%20
 <d' fis'>4.																										%22
 \change Staff="leftHand"																			
 <b, b>8~ <b, b> <a, a>~ <a, a>4																%22
-<d, d>1																												%23
-d																															%24
+\repeat unfold 2
+{
+	<d, d>1																												%23
+	d																															%24
+	g,																														%25
+	b,2 a,																												%26
+}
