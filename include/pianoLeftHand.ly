@@ -21,4 +21,12 @@ a,8 e a2.																											%16
 d1																														%17
 d																															%18
 b,																														%19
-s1*3
+a,8 e a2.																											%20
+\stemDown g,8 d g																							%21
+\change Staff="rightHand"																			
+\stemNeutral a~ a b <d' g'> <d' fis'>~												%21
+<d' fis'>4.																										%22
+\change Staff="leftHand"																			
+<b, b>8~ <b, b> <a, a>~ <a, a>4																%22
+<d, d>1																												%23
+d																															%24

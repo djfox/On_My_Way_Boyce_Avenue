@@ -42,12 +42,13 @@ aguitar =
 	<<
 		%\override Score.VerticalAxisGroup #'remove-first = ##t
 
-		\new Voice = "singer"
+		\new Voice = "singer" \with { \consists "Ambitus_engraver" }
 		{
 			\clef treble
 			\key d \major
 			\override Staff.TimeSignature #'style = #'()
 			\set Staff.instrumentName = "Voice"
+			\set Staff.shortInstrumentName = "V"
 			\set Staff.midiInstrument = "voice oohs"
 			\time 4/4
 			\include "include/voice.ly"
@@ -64,6 +65,7 @@ aguitar =
 		<<
 	
 			\set PianoStaff.instrumentName = #"Piano"
+			\set PianoStaff.shortInstrumentName = "P"
 	
 			%%%%%%%%%%%%%%%%% PIANO RIGHT HAND %%%%%%%%%%%%%%%%%
 			\new Staff = "rightHand"
@@ -95,6 +97,7 @@ aguitar =
 		\new StaffGroup
 		<<
 			\set StaffGroup.instrumentName = #"E. guitar"
+			\set StaffGroup.shortInstrumentName = "E. g"
 			%\override StaffGroup.SystemStartBracket #'collapse-height = #20
 			%\set StaffGroup.systemStartDelimiter = #'SystemStartSquare
 			\new Staff
@@ -114,6 +117,7 @@ aguitar =
 		\new StaffGroup
 		<<
 			\set StaffGroup.instrumentName = #"Ac. guitar"
+			\set StaffGroup.shortInstrumentName = "A. g"
 			%\override StaffGroup.SystemStartBracket #'collapse-height = #20
 			%\set StaffGroup.systemStartDelimiter = #'SystemStartSquare
 			\new Staff
@@ -132,6 +136,7 @@ aguitar =
 		\new RhythmicStaff
 		{
 			\set RhythmicStaff.instrumentName = #"Tambo"
+			\set Staff.shortInstrumentName = "T"
 			\override Staff.TimeSignature #'style = #'()
 			\time 4/4
 			\include "include/tambo.ly"

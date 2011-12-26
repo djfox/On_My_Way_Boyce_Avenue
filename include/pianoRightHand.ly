@@ -60,5 +60,11 @@
 	<a d'>																											%19
 }
 >>
-s1*2
+<e' a'>4. <d' a'>8~ <d' a'>4 <cis' a'>												%20
+<b g'>4. s8 s2																								%21
+\change Staff="leftHand"																			
+g,8[ d g]																											%22
+\change Staff="rightHand"
+<d' fis' a'>4 <a cis' e'>4.																		%22
 \bar "||"
+<a d' fis'>1																									%23
