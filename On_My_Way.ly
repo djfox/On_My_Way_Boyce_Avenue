@@ -53,14 +53,18 @@ aguitar =
 			\set Staff.midiInstrument = "voice oohs"
 
 			\time 4/4
-			r1 r1 r1 r1 r4 r8. a'16 fis'' fis''8 fis''16 ~ fis''8 e''16 e''~
-			e''8 fis''8 r8. e''16 e'' fis''8 fis''8 e''16 cis'' d''~
-			d''2. r8 r32 a'16.
-			e''16 fis''8 fis''8 r8 e''16~ e'' fis''8 fis''8 e''16 d''8~
+			r1																															%1
+			r1																															%2
+			r1																															%3
+			r1																															%4
+			r4 r8. a'16 fis'' fis''8 fis''16 ~ fis''8 e''16 e''~						%5
+			e''8 fis''8 r8. e''16 e'' fis''8 fis''8 e''16 cis'' d''~				%6
+			d''2. r8 r32 a'16.																							%7
+			e''16 fis''8 fis''8 r8 e''16~ e'' fis''8 fis''8 e''16 d''8~			%8
 
-			d''4 r8. a'16 fis'' fis''8 fis''16~ fis''8 e''16 e''~
-			e''8 fis''8 r8. a'16 e'' fis''8 e'' cis''  d''16~
-			d''8
+			d''4 r8. a'16 fis'' fis''8 fis''16~ fis''8 e''16 e''~						%9
+			e''8 fis''8 r8. a'16 e'' fis''8 e'' cis''  d''16~								%10
+			d''8																														%11
 		}
 		\new Lyrics = "singerLyrics"
 		{
@@ -91,10 +95,10 @@ aguitar =
 				\time 4/4
 	
 				% INTRO %
-				<a' d'' fis''>1
-				<a' cis'' e''>
-				<g' b' d''>
-				<fis' a' d''>2 <e' a' cis''>2 \bar "||"
+				<a' d'' fis''>1																								%1
+				<a' cis'' e''>																								%2
+				<g' b' d''>																										%3
+				<fis' a' d''>2 <e' a' cis''>2 \bar "||"												%4
 				
 
 
@@ -104,19 +108,19 @@ aguitar =
 					<<
 					{
 						\voiceOne
-						<d'' fis''>2. d''4
-						<cis'' e''>2. cis''4
-						<b' d''>2. a'4
+						<d'' fis''>2. d''4																				%5
+						<cis'' e''>2. cis''4																			%6
+						<b' d''>2. a'4																						%7
 					}
 					\new Voice
 					{
 						\voiceTwo
-						a'1
-						a'
-						g'
+						a'1																												%5
+						a'																												%6
+						g'																												%7
 					}
 					>>
-					<fis' a' d''>2 <e' a' cis''>2
+					<fis' a' d''>2 <e' a' cis''>2																%12
 				} \bar "||"
 	
 
@@ -124,32 +128,32 @@ aguitar =
 				% CHORUS %
 				<<
 				{	\voiceOne
-					g'2. a'4
-					<d' fis'>2~ <d' fis'>8 d' e'4
-					fis'2~ fis'8 b fis'4
+					g'2. a'4																										%13
+					<d' fis'>2~ <d' fis'>8 d' e'4																%14
+					fis'2~ fis'8 b fis'4																				%15
 				}
 				\new Voice
 				{
 					\voiceTwo
-					<b d'>1
-					a
-					<a d'>
+					<b d'>1																											%13
+					a																														%14
+					<a d'>																											%15
 				}
 				>>
-				<e' a'>4. <d' a'>8~ <d' a'>4 <cis' a'>
+				<e' a'>4. <d' a'>8~ <d' a'>4 <cis' a'>												%16
 				<<
 				{
 					\voiceOne
-					g'2. a'4
-					<d' fis'>2~ <d' fis'>8 d' e'4
-					fis'2~ fis'8 b fis'4
+					g'2. a'4																										%17
+					<d' fis'>2~ <d' fis'>8 d' e'4																%18
+					fis'2~ fis'8 b fis'4																				%19
 				}
 				\new Voice
 				{
 					\voiceTwo
-					<b d'>1
-					a
-					<a d'>
+					<b d'>1																											%17
+					a																														%18
+					<a d'>																											%19
 				}
 				>>
 				s1*2
@@ -168,31 +172,33 @@ aguitar =
 				\set Staff.pedalSustainStyle = #'mixed
 	
 				% INTRO %
-				d'1
-				d'
-				g
-				b2 a
+				d'1																														%1
+				d'																														%2
+				g																															%3
+				b2 a																													%4
 				
 				% VERSE 1 %
 				\repeat unfold 2
 				{
-					d'1
-					d'
-					g
-					b2 a
+					d'1																													%5
+					d'																													%6
+					g																														%7
+					b2 a																												%8
 				}
 	
 				% CHORUS 1%
-				d1
-				d
-				b,
-				a,8 e a2.
-				d1
-				d
-				b,
+				d1																														%13
+				d																															%14
+				b,																														%15
+				a,8 e a2.																											%16
+				d1																														%17
+				d																															%18
+				b,																														%19
 				s1*3
 			}
 		>>
+
+
 
 		%%% Guitare électrique %%%
 		\new StaffGroup
@@ -231,7 +237,8 @@ aguitar =
 			\set RhythmicStaff.instrumentName = #"Tambo"
 			\override Staff.TimeSignature #'style = #'()
 			\time 4/4
-			s1*30 r2 r4 a
+			s1*30																														%1
+			r2 r4 a																													%31
 		}
 	>>
 	\layout{}
