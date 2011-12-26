@@ -84,8 +84,8 @@ aguitar =
 	
 			\set PianoStaff.instrumentName = #"Piano"
 	
-			%%%%%%%%%%%%%%%%% PIANO MAIN DROITE %%%%%%%%%%%%%%%%%
-			\new Staff = "droite"
+			%%%%%%%%%%%%%%%%% PIANO RIGHT HAND %%%%%%%%%%%%%%%%%
+			\new Staff = "rightHand"
 			{
 				\override Score.MetronomeMark #'padding = #2.5
 				\tempo 4=85
@@ -162,8 +162,8 @@ aguitar =
 
 			}
 	
-			%%%%%%%%%%%%%%%%% PIANO MAIN GAUCHE %%%%%%%%%%%%%%%%%
-			\new Staff = "gauche"
+			%%%%%%%%%%%%%%%%% PIANO LEFT HAND %%%%%%%%%%%%%%%%%
+			\new Staff = "leftHand"
 			{
 				\clef bass
 				\key d \major
@@ -200,7 +200,7 @@ aguitar =
 
 
 
-		%%% Guitare électrique %%%
+		%%% E. GUITAR %%%
 		\new StaffGroup
 		<<
 			\set StaffGroup.instrumentName = #"E. guitar"
@@ -216,7 +216,10 @@ aguitar =
 			}
 		>>
 
-		%%% Guitare accoustique %%%
+
+
+
+		%%% ACOUSTIC GUITAR %%%
 		\new StaffGroup
 		<<
 			\set StaffGroup.instrumentName = #"Ac. guitar"
@@ -232,6 +235,9 @@ aguitar =
 			}
 		>>
 
+
+
+		%%% TAMBO %%%
 		\new RhythmicStaff
 		{
 			\set RhythmicStaff.instrumentName = #"Tambo"
