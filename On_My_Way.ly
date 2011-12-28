@@ -1,17 +1,15 @@
 \version "2.12.3"
-\header
-{
-	title = "On My Way"
-	composer = "Boyce Avenue"
-	arranger = "Martin Wetterwald"
-	tagline = ""
-}
 
-\paper
-{
-	%#(set-paper-size "a4" 'landscape)
-	#(set-paper-size "a4")
-}
+\include "include/defs.lyi"
+\include "include/aguitar.lyi"
+\include "include/eguitar.lyi"
+\include "include/lyrics.lyi"
+\include "include/pianoLeftHand.lyi"
+\include "include/pianoRightHand.lyi"
+\include "include/tambo.lyi"
+\include "include/voice.lyi"
+
+instrument = "Whole band"
 
 \layout
 {
@@ -21,130 +19,117 @@
 	\context { \StaffGroup \consists "Instrument_name_engraver" }
 }
 
-eguitar =
+\include "include/header.lyi"
+
+\paper
 {
-	\override Staff.TimeSignature #'style = #'()
-	\key d \major
-	\time 4/4
-	\include "include/eguitar.ly"
+	#(set-paper-size "a4" 'landscape)
+	%#(set-paper-size "a4")
+  ragged-last-bottom = ##f
 }
 
-aguitar =
+%\override Staff.TimeSignature #'style = #'()
+%\override Score.MetronomeMark #'padding = #2.5
+\book
 {
-	\override Staff.TimeSignature #'style = #'()
-	\time 4/4
-	\key d \major
-	\include "include/aguitar.ly"
-}
-
-
-\score
-{
-	<<
-		%\override Score.VerticalAxisGroup #'remove-first = ##t
-		%\compressFullBarRests
-
-		\new Voice = "singer" \with { \consists "Ambitus_engraver" }
-		{
-			\clef treble
-			\key d \major
-			\override Staff.TimeSignature #'style = #'()
-			\set Staff.instrumentName = "Voice"
-			\set Staff.shortInstrumentName = "V"
-			\set Staff.midiInstrument = "voice oohs"
-			\time 4/4
-			\include "include/voice.ly"
-		}
-		\new Lyrics = "singerLyrics"
-		{
-			\context Lyrics = singerLyrics\lyricsto "singer"
-			\lyricmode
-			{
-				\include "include/lyrics.ly"
-			}
-		}
-		\new PianoStaff
+	\score
+	{
 		<<
-	
-			\set PianoStaff.instrumentName = #"Piano"
-			\set PianoStaff.shortInstrumentName = "P"
-	
-			%%%%%%%%%%%%%%%%% PIANO RIGHT HAND %%%%%%%%%%%%%%%%%
-			\new Staff = "rightHand"
+			%\override Score.VerticalAxisGroup #'remove-first = ##t
+
+			\new Voice = "singer" \with { \consists "Ambitus_engraver" }
 			{
-				\override Score.MetronomeMark #'padding = #2.5
-				\tempo 4=85
 				\clef treble
 				\key d \major
-				\override Staff.TimeSignature #'style = #'()
-				\time 4/4
-				\include "include/pianoRightHand.ly"
+				\set Staff.instrumentName = "Voice"
+				\set Staff.shortInstrumentName = "V"
+				\set Staff.midiInstrument = "voice oohs"
+				\theVoice
 			}
-	
-			%%%%%%%%%%%%%%%%% PIANO LEFT HAND %%%%%%%%%%%%%%%%%
-			\new Staff = "leftHand"
+			\new Lyrics = "singerLyrics"
 			{
-				\clef bass
-				\key d \major
-				\override Staff.TimeSignature #'style = #'()
-				\time 4/4
-				\set Staff.pedalSustainStyle = #'mixed
-				\include "include/pianoLeftHand.ly"
+				\context Lyrics = singerLyrics\lyricsto "singer"
+				\voiceLyrics
+			}
+
+
+			\new PianoStaff
+			<<
+
+				\set PianoStaff.instrumentName = #"Piano"
+				\set PianoStaff.shortInstrumentName = "P"
+
+				%%%%%%%%%%%%%%%%% PIANO RIGHT HAND %%%%%%%%%%%%%%%%%
+				\new Staff = "rightHand"
+				{
+					\clef treble
+					\key d \major
+					\pianoRightHand
+				}
+
+				%%%%%%%%%%%%%%%%% PIANO LEFT HAND %%%%%%%%%%%%%%%%%
+				\new Staff = "leftHand"
+				{
+					\clef bass
+					\key d \major
+					\set Staff.pedalSustainStyle = #'mixed
+					\pianoLeftHand
+				}
+			>>
+
+
+
+			%%% E. GUITAR %%%
+			\new StaffGroup
+			<<
+				\set StaffGroup.instrumentName = #"Electric guitar"
+				\set StaffGroup.shortInstrumentName = "E. g"
+				%\override StaffGroup.SystemStartBracket #'collapse-height = #20
+				\new Staff
+				{
+					\key d \major
+					\eguitar
+				}
+				\new TabStaff
+				{
+					\key d \major
+					\eguitar
+				}
+			>>
+
+
+
+
+			%%% ACOUSTIC GUITAR %%%
+			\new StaffGroup
+			<<
+				\set StaffGroup.instrumentName = #"Acoustic guitar"
+				\set StaffGroup.shortInstrumentName = "A. g"
+				%\override StaffGroup.SystemStartBracket #'collapse-height = #20
+				\new Staff
+				{
+					\key d \major
+					\aguitar
+				}
+				\new TabStaff
+				{
+					\key d \major
+					\aguitar
+				}
+			>>
+
+
+
+			%%% TAMBO %%%
+			\new RhythmicStaff
+			{
+				\set RhythmicStaff.instrumentName = #"Tambourine"
+				\set Staff.shortInstrumentName = "T"
+				\override NoteHead #'style = #'cross
+				<< \tambo \outline >>
 			}
 		>>
-
-
-
-		%%% E. GUITAR %%%
-		\new StaffGroup
-		<<
-			\set StaffGroup.instrumentName = #"E. guitar"
-			\set StaffGroup.shortInstrumentName = "E. g"
-			%\override StaffGroup.SystemStartBracket #'collapse-height = #20
-			%\set StaffGroup.systemStartDelimiter = #'SystemStartSquare
-			\new Staff
-			{
-				\eguitar
-			}
-			\new TabStaff
-			{
-				\eguitar
-			}
-		>>
-
-
-
-
-		%%% ACOUSTIC GUITAR %%%
-		\new StaffGroup
-		<<
-			\set StaffGroup.instrumentName = #"Ac. guitar"
-			\set StaffGroup.shortInstrumentName = "A. g"
-			%\override StaffGroup.SystemStartBracket #'collapse-height = #20
-			%\set StaffGroup.systemStartDelimiter = #'SystemStartSquare
-			\new Staff
-			{
-				\aguitar
-			}
-			\new TabStaff
-			{
-				\aguitar
-			}
-		>>
-
-
-
-		%%% TAMBO %%%
-		\new RhythmicStaff
-		{
-			\set RhythmicStaff.instrumentName = #"Tambo"
-			\set Staff.shortInstrumentName = "T"
-			\override Staff.TimeSignature #'style = #'()
-			\time 4/4
-			\override NoteHead #'style = #'cross
-			\include "include/tambo.ly"
-		}
-	>>
-	\layout{}
-	\midi{}
+		\layout{}
+		\midi{}
+	}
 }

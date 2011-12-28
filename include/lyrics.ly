@@ -1,6 +1,0 @@
-I wa- sn't the~re the mo- ment
-That you first le- arned to breathe
-But "I'm on" my way
-On my way - -
-I wa- sn't there the mo- ment
-That you got of your knees

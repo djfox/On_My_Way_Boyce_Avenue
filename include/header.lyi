@@ -1,0 +1,18 @@
+\version "2.12.3"
+
+\header
+{
+  title = \markup{On My Way}
+  composer = "Boyce Avenue"
+	arranger = "Martin Wetterwald"
+  instrument = \instrument
+
+  date = "1791"
+  style = "Acoustic"
+  copyright = ""
+  maintainer = "Martin Wetterwald"
+  maintainerEmail = "martin@wetterwald.eu"
+
+ footer = ""
+ tagline = ""
+}

@@ -1,0 +1,67 @@
+\version "2.12.3"
+
+rMark = #(define-music-function (parser location markp) (string?)
+#{
+  \mark \markup { \box $markp }
+#})
+
+outline =
+{
+	\override Score.TimeSignature #'style = #'()
+	\override Score.MetronomeMark #'padding = #4
+  \time 4/4
+  \tempo "Andante" 4=85
+  \rMark "Intro"
+  s1*4 \bar "||"
+	\break
+
+  \rMark "Verse 1"
+  s1*8 \bar "||"
+	\break
+
+  \rMark "Chorus 1"
+  s1*10 \bar "||"
+	\break
+
+  \rMark "Verse 2"
+  s1*8 \bar "||"
+	\break
+
+  \rMark "Chorus 2"
+  s1*10 \bar "||"
+	\break
+
+  \rMark "Verse 3"
+  s1*18 \bar "||"
+	\break
+
+  \rMark "Solo"
+  s1*10 \bar "||"
+	\break
+
+  \rMark "Piano"
+  s1*4 \bar "||"
+	\break
+
+  \rMark "Outro"
+  s1*5 \bar "|."
+}
+
+\layout
+{
+  \context
+  {
+    \Score
+    skipBars = ##t
+    extraNatural = ##f
+  }
+}
+
+\midi
+{
+  \context
+  {
+    \Voice
+    \remove "Dynamic_performer"
+  }
+}
