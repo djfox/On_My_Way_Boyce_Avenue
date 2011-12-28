@@ -24,6 +24,7 @@
 		g'																												%7
 	}
 	>>
+	\oneVoice
 	<fis' a' d''>2 <e' a' cis''>2																%12
 } \bar "||"
 
@@ -46,6 +47,7 @@
 		<a d'>																										%15
 	}
 	>>
+	\oneVoice
 	<e' a'>4. <d' a'>8~ <d' a'>4 <cis' a'>											%16
 }
 <b g'>4. s8 s2																								%21
@@ -72,6 +74,7 @@ g,8[ d g]																											%22
 	<g b>																												%25
 }
 >>
+\oneVoice
 <fis a d'>2 <e a cis'>																				%26
 }
 \bar "||"
@@ -96,3 +99,10 @@ g,8[ d g]																											%40
 
 
 % VERSE 3 %
+\repeat unfold 2
+{
+	\repeat unfold 4 {<b d' g'>8 r}															%41
+	\repeat unfold 3 {<a d' fis'>8 r} <a cis' e'>8 r						%42
+	\repeat unfold 4 {<d' fis' a'>8 r}													%43
+	\repeat unfold 4 {<cis' e' a'>8 r}													%44
+}

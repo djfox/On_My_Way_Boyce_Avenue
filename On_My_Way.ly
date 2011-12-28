@@ -33,6 +33,7 @@ aguitar =
 {
 	\override Staff.TimeSignature #'style = #'()
 	\time 4/4
+	\key d \major
 	\include "include/aguitar.ly"
 }
 
@@ -41,6 +42,7 @@ aguitar =
 {
 	<<
 		%\override Score.VerticalAxisGroup #'remove-first = ##t
+		%\compressFullBarRests
 
 		\new Voice = "singer" \with { \consists "Ambitus_engraver" }
 		{
@@ -139,6 +141,7 @@ aguitar =
 			\set Staff.shortInstrumentName = "T"
 			\override Staff.TimeSignature #'style = #'()
 			\time 4/4
+			\override NoteHead #'style = #'cross
 			\include "include/tambo.ly"
 		}
 	>>
