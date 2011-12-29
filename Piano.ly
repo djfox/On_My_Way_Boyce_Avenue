@@ -30,6 +30,8 @@ instrument = "Piano"
 				<< \key d \major \pianoLeftHand \outline >>
 			}
 		>>
+		\layout{}
+		\midi{}
   }
 }
 

@@ -87,12 +87,12 @@ pianoRightHand =
 
 	% CHORUS 2 %
 	<b d' g'>4. d'8 d''4 cis''																		%31
-	<a d' fis'>4. d'8 a' b e' b																		%32
+	<a d' fis'>4. d'8 a' a e' a																		%32
 	<a d' fis'>4. b8 d' e' fis'4																	%33
 	<e' a'>4. <d' a'>8~ <d' a'>4 <cis' a'>												%34
 
 	<b d' g'>4. d'8 d''4 cis''																		%35
-	<a d' fis'>4. d'8 a' b e' b																		%36
+	<a d' fis'>4. d'8 a' a e' a																		%36
 	<a d' fis'>4. b8 d' e' fis'4																	%37
 	<e' a'>4. <d' a'>8~ <d' a'>4 <cis' a'>												%38
 	<b g'>4. s8 s2																								%39
@@ -103,11 +103,13 @@ pianoRightHand =
 
 
 	% VERSE 3 %
-	\repeat unfold 2
+	\repeat unfold 4
 	{
 		\repeat unfold 4 {<b d' g'>8 r}															%41
 		\repeat unfold 3 {<a d' fis'>8 r} <a cis' e'>8 r						%42
 		\repeat unfold 4 {<d' fis' a'>8 r}													%43
-		\repeat unfold 4 {<cis' e' a'>8 r}													%44
+		<a e' a'>8 r <a e' a'> <a d' a'>4 <a cis' a'>4 <a cis' a'>8	%44
 	}
+	\repeat unfold 3 {<b d' g'> r} <b d' g'> <b d' fis'>~					%57
+	<b d' fis'> d' e' <d' fis' a'> <d' fis' a'> \repeat unfold 3 {<a cis' e'>} %58
 }
