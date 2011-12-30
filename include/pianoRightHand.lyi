@@ -112,4 +112,57 @@ pianoRightHand =
 	}
 	\repeat unfold 3 {<b d' g'> r} <b d' g'> <b d' fis'>~					%57
 	<b d' fis'> d' e' <d' fis' a'> <d' fis' a'> \repeat unfold 3 {<a cis' e'>} %58
+
+
+	% SOLO %
+	\repeat unfold 2
+	{
+		\repeat unfold 3 {<b d' fis'>8 r}	<b d' g'>8 r							%59
+		\repeat unfold 3 {<a d' fis'>8 r} <a cis' e'>8 r						%60
+		\repeat unfold 4 {<d' fis' a'>8 r}													%61
+		<a e' a'>8 r <a e' a'> <a d' a'>4 <a cis' a'>4 <a cis' a'>8	%62
+	}
+	\repeat unfold 3 {d'' r} cis'' b'~														%67
+	b' <fis' a'> <fis' a'> <a d' fis'> <a d' fis'> <a cis' e'> <a cis' e'>4			%68
+
+
+
+	% PIANO %
+	<a d' fis'>2. d''4																						%69
+	<<
+	{
+		\voiceOne
+		<cis'' e''>2. cis''4																				%70
+		<b' d''>2. a'4																							%71
+	}
+	\new Voice
+	{
+		\voiceTwo
+		a'1																													%70
+		g'																													%71
+	}
+	>>
+	\oneVoice
+	<fis' a' d''>2 <e' a' cis''>2																	%72
+
+
+	% OUTRO %
+	<<
+	{
+		\voiceOne
+		<d'' fis''>2. d''4																					%73
+		<cis'' e''>2. cis''4																				%74
+		<b' d''>2. a'4																							%75
+	}
+	\new Voice
+	{
+		\voiceTwo
+		a'1																													%73
+		a'																													%74
+		g'																													%75
+	}
+	>>
+	\oneVoice
+	<b d' fis'>4 b8 d' e' d' cis' d'~															%76
+	d'1																														%77
 }

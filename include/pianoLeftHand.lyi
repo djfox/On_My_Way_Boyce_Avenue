@@ -75,5 +75,32 @@ pianoLeftHand =
 	b,8 b, r b, r b, r b,																					%55
 	a,8 a, r4 a,8 r a, r																					%56
 	g, g, r g, r g, r4																						%57
-	<g, g> 4.<b,, b,>4 <a,, a,>8~ <a,, a,>4											%58
+	<g, g> 4.<b,, b,>4 <a,, a,>8~ <a,, a,>4												%58
+
+
+	% SOLO %
+	\repeat unfold 2
+	{
+		d8 d r d r d r d																						%59
+		d8 d r d r d r d																						%60
+		b,8 b, r b, r b, r b,																				%61
+		a,8 a, r4 a,8 r a, r																				%62
+	}
+	g, g, r g, r g, r4																						%67
+	<g, g> 4.<b,, b,>4 <a,, a,>8~ <a,, a,>4												%68
+
+
+	% PIANO %
+	<d, d>1																												%69
+	d'																														%70
+	g																															%71
+	b2 a																													%72
+
+
+	% OUTRO %
+	<d d'>1																												%73
+	d'																														%74
+	g																															%75
+	b,2 a,8 e a4																									%76
+	<d fis a d'>1\arpeggio\fermata																%77
 }

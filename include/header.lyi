@@ -3,6 +3,7 @@
 \header
 {
   title = \markup{On My Way}
+	subtitle = "Acoustic live version"
   composer = "Boyce Avenue"
 	arranger = "Martin Wetterwald"
   instrument = \instrument
